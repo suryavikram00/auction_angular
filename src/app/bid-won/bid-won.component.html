@@ -1,0 +1,37 @@
+<div class="container">
+    <div *ngFor="let productBid of wonProductList; let i = index">
+        <div class="card  col-sm-12  col-lg-4 col-md-4 float-left">
+            <div class="box-border-style mPad10 mt-3 mb-3">
+                <img class="card-img-top rounded img-style" style="height: 200px"
+                    src="http://localhost:8080//retrieve-image/{{productBid?.product?.imageMetaData[0]?.id || 8}}"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <div class="mx-3">
+                        <p class="card-text">{{productBid?.product?.name}} sfddsfdsf </p>
+                        <p class="text-primary py-1">Ends In</p>
+                    </div>
+                    <div class="row py-1 mx-3">
+                        <div >
+                            <a routerLink="../edit-product/{{productBid?.product?.id}}">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        </div>
+                        
+                    </div>
+                    <div class="row py-1 mx-3 ">
+                        <p class="col-6 text-secondary px-0 text-left">Start Amount</p>
+                        <p class="col-6 text-primary px-0 text-right"> Rs {{productBid?.product?.minimumAmount}}</p>
+                    </div>
+                    <div class="row py-1 mx-3 ">
+                        <p class="col-6 text-secondary px-0 text-left">Max Bid Amount</p>
+                        <p class="col-6 text-primary px-0 text-right">Rs {{productBid?.product?.maximumBidAmount}}</p>
+                    </div>
+                    <div class="row py-1 mx-3 ">
+                        <p class="col-6 text-secondary px-0 text-left">Bid No</p>
+                        <p class="col-6 text-primary px-0 text-right">{{productBid.bidNo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

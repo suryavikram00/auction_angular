@@ -1,0 +1,75 @@
+<div class="container">
+    <form (ngSubmit)="addProduct()" [formGroup]="productForm">
+        <div class="form-group row">
+            <div class="col-sm-3">
+                <label for="inputProductName" class=" col-form-label">Product Name</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="productName" formControlName="name" required>
+            </div>
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class=" row">
+            <div class="col-sm-3 w-100"></div>
+            <div class="col-sm-9 w-100">
+                <div *ngIf="name.errors.required" class=" alert alert-danger">
+                    Please fill in the Product Name
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputProductDescription" class="col-sm-3 col-form-label">Product Description</label>
+            <div class="col-sm-9">
+                <textarea id="productDescription" class="form-control" rows="4" cols="50" formControlName="description">
+                    At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+                </textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputProductMinimumAmount" class="col-sm-3 col-form-label">Minimum Amount in Rupee</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" id="productMinimumAmount" formControlName="minimumAmount"
+                    min="0" required>
+            </div>
+        </div>
+        <div *ngIf="minimumAmount.invalid && (minimumAmount.dirty || minimumAmount.touched)" class=" row">
+            <div class="col-sm-3 w-100"></div>
+            <div class="col-sm-9 w-100">
+                <div *ngIf="minimumAmount.errors.required" class=" alert alert-danger">
+                    Please fill in the Minimum Amount
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputUploadImages" class="col-sm-3 col-form-label">Upload Images</label>
+            <div class="col-sm-9">
+                <input type="file" class="form-control-file" (change)="onFileSelect($event)" id="productImages" multiple
+                    formControlName="productImages">
+            </div>
+        </div>       
+        <div class="form-group row">
+            <label for="inputProductTags" class="col-sm-3 col-form-label">Product tags</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="productTag" formControlName="productTag">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputExpiryDate" class="col-sm-3 col-form-label">Auction End Date</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" id="expiryTime" formControlName="expiryTime" required>
+            </div>
+        </div>
+        <div *ngIf="expiryTime.invalid && (expiryTime.dirty || expiryTime.touched)" class=" row">
+            <div class="col-sm-3 w-100"></div>
+            <div class="col-sm-9 w-100">
+                <div *ngIf="expiryTime.errors.required" class=" alert alert-danger">
+                    Please fill in the Expiry Date
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" [disabled]="productForm.invalid" class="btn btn-primary">Sell Product</button>
+            </div>
+        </div>
+    </form>
+</div>

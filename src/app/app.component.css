@@ -1,0 +1,26 @@
+/* @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+  
+.the-icons {
+  font-size: 25px;
+} */
+
+.nowrap{
+  flex-wrap: nowrap;
+}
+
+body {
+  margin-top: 60px;
+}
+
+
+
+@media screen and (max-width: 780px) {
+  .inline-content-sm{
+  display: flex;
+  flex-wrap: nowrap;
+  }
+  .container{
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}

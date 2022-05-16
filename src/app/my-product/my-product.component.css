@@ -1,0 +1,56 @@
+/* @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"); */
+
+p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+.search-results {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+input:out-of-range {
+  border: 2px solid red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.box-border-style{
+  box-shadow: 0px 0px 5px 3px #ccc;
+  border-radius: 2%;
+  
+}
+
+.card{
+  border: none;
+}
+
+.box-border-style:hover{
+  box-shadow: 0px 0px 5px 3px #51d663;
+}
+.font{
+  font-size: 12px;
+}
+.img-style{
+  padding: 5%;
+}
+
+.font-header{
+
+}
